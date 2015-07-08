@@ -7,6 +7,7 @@ var page = (function() {
    */
   function _init() {
 
+    var app = angular.module("plantGuide", []);
   
   }
 
