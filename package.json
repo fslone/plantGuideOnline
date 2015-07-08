@@ -1,10 +1,10 @@
 {
-  "name": "The Plant Guide Online",
+  "name": "PlantGuideOnline",
   "main": "server/app.js",
   "version": "0.0.0",
   "private": false,
   "author": "Fleming Slone <fslone@gmail.com>",
-  "description": "The code for one of my sites, ThePlantGuideOnline.com",
+  "description": "The source code for a redesign of one of my old sites.",
   "devDependencies": {
     "chai": "^3.0.0",
     "grunt": "^0.4.5",
