@@ -11,37 +11,37 @@
 </head>
 
 <body>
-  <div id="container" class="container" ng-controller="PlantGuideController as site">
+  <div id="container" class="container" ng-controller="ContentController as content">
     <div id="banner">
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h1>{{site.content.headline}}</h1>
+        <h1>{{content.content.headline}}</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <p>{{site.content.paragraph1}}</p>
+        <p>{{content.content.paragraph1}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <p>{{site.content.paragraph2}}</p>
+        <p>{{content.content.paragraph2}}</p>
       </div>
     </div>
-    <div class="row" ng-show="site.content.hasLocation">
+    <div class="row" ng-show="content.content.hasLocation">
       <div class="col-xs-12">
         <p>Find plants for ****myLocation***</p>
       </div>
     </div>
-    <div class="row" ng-show="site.content.hasLocation">
+    <div class="row" ng-show="content.content.hasLocation">
       <div class="col-xs-12">
-        <p>Find plants for this location {{site.content.location}}</p>
+        <p>Find plants for this location {{content.content.location}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <p>{{site.content.paragraph3}}</p>
+        <p>{{content.content.paragraph3}}</p>
       </div>
     </div>
   </div>

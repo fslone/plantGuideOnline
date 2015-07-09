@@ -13,7 +13,7 @@ var page = (function() {
 
     app = angular.module("plantGuide", []);
 
-    app.controller("PlantGuideController", function() {
+    app.controller("ContentController", function() {
       this.content = content; 
     });
 
