@@ -1,7 +1,6 @@
 (function() {
   var restify = require("restify"),
-      fs = require("fs"),
-      request = require("request");
+      fs = require("fs");
 
   var _server;
       
@@ -17,6 +16,7 @@
     var port, 
         clientDir;
     
+    //this is a fix for Heroku
     if(process.env.PORT) {
       port = process.env.PORT;
       clientDir = "client";
@@ -52,21 +52,44 @@
 
   function _registerRestCalls() {
 
-    _server.get("/restapi/GetWikis", __getWikis);
+    _server.get("/restapi/GetStates", __getStates);
 
-    function __getWikis(req, res, next) {
+    _server.get("/restapi/GetTowns", __getTowns);
 
-      var query, 
-          url;
+    _server.get("/restapi/GetGrowingZones", __getGrowingZones);
 
-      query = req.params.query;
-      url = "https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=" + query
-      request.get(url, function(err, response, body){
-        
-        if(err) res.status(500).send({ error: err });
-        else res.send(response);
+    function __getStates(req, res, next) {
+      
+      var states, 
+          responseObj;
+      
+      responseObj = {
+        "states": []
+      };
 
-      });
+      response.states.push("Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming");
+
+      res.send(responseObj);
+
+    }
+
+    function __getTowns(req, res, next) {
+      
+      var stateId;
+      
+      stateId = req.params.stateId;
+
+      responseObj = {
+        "towns": []
+      };
+
+      res.send(responseObj);
+
+    }
+
+    function __getGrowingZones(req, res, next) {
+      
+      res.send(200);
 
     }
 
