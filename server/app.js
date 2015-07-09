@@ -37,6 +37,9 @@
     _server.use(restify.queryParser());
     _server.use(restify.fullResponse());
 
+    //prerender all angular js pages
+    _server.use(require('prerender-node'));
+
     //start listening on specified port
     _server.listen(port);
 
