@@ -111,3 +111,10 @@ body a:hover {
 
 .unselected {
   display: none; }
+
+#select_state {
+  border: 5px solid #666666;
+  padding: 15px;
+  text-align: center;
+  width: 500px;
+  margin: 0 auto 15px auto; }

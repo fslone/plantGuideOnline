@@ -16,32 +16,47 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h1>{{content.content.headline}}</h1>
+        <h1>{{content.homePageContent.headline}}</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <p>{{content.content.paragraph1}}</p>
+        <p>{{content.homePageContent.paragraph1}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <p>{{content.content.paragraph2}}</p>
+        <p>{{content.homePageContent.paragraph2}}</p>
       </div>
     </div>
-    <div class="row" ng-show="content.content.hasLocation">
+    <div class="row" ng-hide="content.homePageContent.hasLocation">
       <div class="col-xs-12">
         <p>Find plants for ****myLocation***</p>
       </div>
     </div>
-    <div class="row" ng-show="content.content.hasLocation">
+    <div class="row" ng-show="content.homePageContent.hasLocation">
       <div class="col-xs-12">
-        <p>Find plants for this location {{content.content.location}}</p>
+        <p>Find plants for this location {{content.homePageContent.location}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <p>{{content.content.paragraph3}}</p>
+        <p>{{content.homePageContent.paragraph3}}</p>
+      </div>
+    </div>
+    <div class="row" ng-repeat="plant in content.homePageContent.plants">
+      <div class="col-xs-12">
+        <h2>{{plant.name}}</h2>
+        <p>{{plant.description}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="select_state">
+          <select name="state_choice" ng-repeat="state in content.states">
+            <option value="">{{state.name}}</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
